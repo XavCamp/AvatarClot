@@ -1,79 +1,455 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body.hide #container,
+		body.hide button,
+		body.hide legend {
+			display: none;
+		}
+		body, div {
+			margin: 0;
+			padding: 0;
+	    	border-color: black;
+	    	border-width: 10px;
+		}
+		div {
+	    	border-radius: 50%;
+	    	position: absolute;
+		}
+		.picasso div {
+			border-radius: 0 !important;
+		}
+		.crayon div {
+			border-width: 1px;
+		}
+		.blonde .hair {
+			background-color: yellow;
+		}
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="AvatarClot : Avatar html de Clot pour son annif !" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		legend {
+			position: relative;
+			top: 620px;
+		}
+		#container {
+			background-color: #FD6602;
+			height: 620px;
+			width: 620px;
+			border-radius: 0;
+			overflow: hidden;
+		}
+		#container:hover {
+			visibility: none;
+		}
+		#model {
+			display: none;
+			width: inherit;
+			position: absolute;
+		}
+		#container:hover #model {
+			display: block;
+		}
 
-    <title>AvatarClot</title>
-  </head>
+		.border {
+		    border-style: solid;
+		}
+		.flesh {
+		    background-color: #FBEDE2;
+		}
 
-  <body>
+		#headContainer {
+		    left: 210px;
+		    width: 250px;
+		    height: 300px;
+		    top: 140px;
+		}
+		#headBackground {
+		    width: 100%;
+		    height: 105%;
+		}
+		#headBorder {
+			top: 4%;
+		    width: 100%;
+		    height: 96%;
+		    border-left: none;
+		}
+		#head {
+			-webkit-transform: rotate(-23deg);
+			transform: rotate(-23deg);
+			top: 1%;
+			left: 13%;
+			width: 85%;
+			height: 91%;
+			background-color: white;
+		}
+		#headHairShaping {
+			-webkit-transform: rotate(-50deg);
+			transform: rotate(-50deg);
+			background-color: white;
+			width: 14%;
+			height: 48%;
+			top: -7%;
+			left: 65%;
+		}
+		#headHairStripes {
+			border-radius: 30% 45% 53% 58%;
+			-webkit-transform: rotate(-50deg);
+			transform: rotate(-50deg);
+			width: 10%;
+			height: 50%;
+			top: 7%;
+			left: 63%;
+			border-top: none;
+			border-bottom: none;
+			opacity: 0.7;
+		}
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/XavCamp/AvatarClot">View on GitHub</a>
+		.hair {
+			opacity: 0.7;
+			background-color: #B89477;
+		}
 
-          <h1 id="project_title">AvatarClot</h1>
-          <h2 id="project_tagline">Avatar html de Clot pour son annif !</h2>
+		#topLeft {
+			border-top: 0px;
+		    width: 29%;
+		    height: 61%;
+		    -webkit-transform: rotate(25deg);
+		    transform: rotate(25deg);
+		}
+		#topRight {
+			border-right: 0px;
+			top: -12%;
+			left: 51%;
+			width: 35%;
+			height: 69%;
+			-webkit-transform: rotate(-53deg);
+		    transform: rotate(-53deg);
+		}
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/XavCamp/AvatarClot/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/XavCamp/AvatarClot/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+		.ponytail {
+			border-right: 0px;
+			border-bottom: 0px;
+		}
+		.ponytailBackground {
+			background-color: white;
+			opacity: 1;
+		}
+		.ponytail1 {
+			height: 67%;
+			width: 59%;
+			left: -37%;
+			top: 6%;
+		}
+		.ponytailShaping1 {
+			background-color: white;
+			opacity: 1;
+			left: -12%;
+			top: 18%;
+			-webkit-transform: rotate(13deg);
+		    transform: rotate(13deg);
+		}
+		.ponytail2 {
+			-webkit-transform: rotate(84deg);
+		    transform: rotate(84deg);
+			height: 45%;
+			width: 32%;
+			left: -49%;
+			top: 55%;
+		}
+		.ponytailShaping2 {
+			width: 18%;
+			height: 30%;
+			background-color: #FD6602 !important;
+			opacity: 1;
+			left: -51%;
+			top: 55%;
+			border-left: none;
+			border-top: none;
+			border-bottom: none;
+		}
+		.ponytail2.ponytailBackground {
+			left: -50%;
+			height: 44%;
+			top: 56%;
+			width: 33%;
+		}
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+		#ear {
+			border-right: none;
+			border-radius: 50% 50% 0 73%;
+			height: 20%;
+			width: 12%;
+			top: 60%;
+			left: -6%;
+			-webkit-transform: rotate(-21deg);
+		    transform: rotate(-21deg);
+		}
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+		.face {
+			border-right: none;
+			border-top: none;
+			border-bottom: none;
+			-webkit-transform: rotate(-90deg);
+		    transform: rotate(-90deg);
+		}
+		#leftEye {
+			left: 43%;
+			top: 41%;
+		    height: 14%;
+		    width: 12%;
+		}
+		#rightEye {
+			left: 80%;
+			top: 49%;
+		    height: 12%;
+		    width: 10%;
+		}
+		#mouth {
+			left: 64%;
+			top: 69%;
+		    height: 12%;
+		    width: 12%;
+		}
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+		#bodyContainer {
+			background-color: white;
+			height: 150px;
+			width: 290px;
+			bottom: 0;
+			left: 190px;
+			border-radius: 30% 53% 0 0;
+		}
+		#bodyShape {
+			left: 6%;
+			height: 100%;
+			width: 89%;
+			border-top-left-radius: 25% 25%;
+			border-top-right-radius: 44%;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			overflow: hidden;
+			border-left-style: solid;
+			border-top-style: solid;
+			-webkit-transform: rotate(4deg);
+		    transform: rotate(4deg);
+		}
+		#bodyShadow {
+			left: 7%;
+			height: 37%;
+			width: 33%;
+			border-radius: 76% 32% 79% 0;
+		}
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+		.neck {
+			height: 22%;
+			border-radius: 0;
+			top: -15%;
+		}
+		#neck {
+			background-color: white;
+			width: 18%;
+			left: 40%;
+		}
+		#neckBackground {
+			width: 26%;
+			left: 32%;
+			border-right-style: solid;
+		}
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+		#collar {
+			top: -31%;
+			left: 10%;
+			border-top: none;
+			width: 69%;
+			height: 70%;
+		}
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+		.stripe {
+			border-top: none;
+		}
+		div.blueStripe {
+			border-color: #C2D6F1;
+			border-width: 20px;
+			opacity: 0.7;
+		}
+		#blueStripe1 {
+			top: -44%;
+			left: 1%;
+			width: 101%;
+			height: 94%;
+		}
+		#blueStripe2 {
+			top: -19%;
+			left: 0;
+			width: 101%;
+			height: 86%;
+			-webkit-transform: rotate(-5deg);
+		    transform: rotate(-5deg);
+		}
+		#blueStripe3 {
+			top: 54%;
+			left: 10%;
+			width: 92%;
+			height: 30%;
+			-webkit-transform: rotate(-8deg);
+		    transform: rotate(-8deg);
+		}
+		#blackStripe1 {
+			top: -42%;
+			left: 9%;
+			width: 116%;
+			height: 94%;
+			-webkit-transform: rotate(-15deg);
+		    transform: rotate(-15deg);
+		}
+		#blackStripe2 {
+			top: -6%;
+			left: -14%;
+			width: 93%;
+			height: 76%;
+			-webkit-transform: rotate(9deg);
+		    transform: rotate(9deg);
+		}
+		#blackStripe3 {
+			top: 38%;
+			left: 11%;
+			width: 79%;
+			height: 47%;
+			-webkit-transform: rotate(-6deg);
+		    transform: rotate(-6deg);
+		}
+		#blackStripe4 {
+			top: 39%;
+			left: 3%;
+			width: 15%;
+			height: 8%;
+			-webkit-transform: rotate(27deg);
+		    transform: rotate(27deg);
+		}
+		#blackStripe5 {
+			top: 55%;
+			left: 87%;
+			width: 3%;
+			height: 1%;
+			-webkit-transform: rotate(-24deg);
+		    transform: rotate(-24deg);
+		}
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+		.boob {
+			border-right-style: solid;
+			width: 33%;
+		}
+		#rightBoob {
+			height: 76%;
+			right: -2%;
+			top: 33%;
+		}
+		#leftBoob {
+			height: 61%;
+			left: 39%;
+			top: 45%;
+		}
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+		#leftArmShadow {
+			height: 51%;
+			bottom: 0;
+			width: 15%;
+			border-radius: 30% 30% 0 0;
+			left: 9%;
+		}
+		#leftArm {
+			left: 19%;
+			background-color: white;
+			border-right-style: solid;
+			height: 29%;
+			bottom: -2%;
+			width: 5%;
+			border-radius: 30% 0 0 0;
+			-webkit-transform: rotate(7deg);
+		    transform: rotate(7deg);
+		}
+		#rightArm {
+			right: -1%;
+			border-right-style: solid;
+			height: 16%;
+			bottom: 0%;
+			border-radius: 30% 0 0 0;
+			-webkit-transform: rotate(-4deg);
+		    transform: rotate(-4deg);
+		}
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+		button {
+			float: right;
+			clear: both;
+		}
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">AvatarClot maintained by <a href="https://github.com/XavCamp">XavCamp</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
 
-    
 
-  </body>
+	</style>
+</head>
+<body class="hide">
+	<div id="container">
+		<div id="bodyContainer">
+			<div class="flesh" id="bodyShadow"></div>
+			<div class="flesh" id="leftArmShadow"></div>
+			<div id="bodyShape">
+				<div class="border" id="collar"></div>
+				<div class="border stripe blueStripe" id="blueStripe1"></div>
+				<div class="border stripe blueStripe" id="blueStripe2"></div>
+				<div class="border stripe blueStripe" id="blueStripe3"></div>
+				<div class="border stripe" id="blackStripe1"></div>
+				<div class="border stripe" id="blackStripe2"></div>
+				<div class="border stripe" id="blackStripe3"></div>
+				<div class="border stripe" id="blackStripe4"></div>
+				<div class="border stripe" id="blackStripe5"></div>
+			</div>
+			<div class="neck flesh" id="neckBackground"></div>
+			<div class="neck" id="neck"></div>
+			<div class="boob" id="rightBoob"></div>
+			<div class="boob" id="leftBoob"></div>
+			<div id="leftArm"></div>
+			<div id="rightArm"></div>
+			
+		</div>
+		<div id="headContainer">
+			<div class="ponytail2 ponytailBackground"></div>
+			<div class="ponytail1 ponytailBackground"></div>
+			<div class="hair ponytail2 ponytail"></div>
+			<div class="hair border ponytail2 ponytailShaping2"></div>
+			<div class="hair border ponytail1 ponytail"></div>
+			<div class="hair ponytail1 ponytailShaping1"></div>
+			<div class="flesh" id="headBackground"></div>
+			<div class="border" id="headBorder"></div>
+			<div id="head"></div>
+			<div class="border flesh" id="ear"></div>
+			<div class="hair border" id="topLeft"></div>
+			<div class="hair border" id="topRight"></div>
+			<div id="headHairShaping"></div>
+			<div class="border" id="headHairStripes"></div>
+			<div class="border face" id="leftEye"></div>
+			<div class="border face" id="rightEye"></div>
+			<div class="border face" id="mouth"></div>
+		</div>
+		<img id="model" src="https://scontent-b-cdg.xx.fbcdn.net/hphotos-prn1/47299_439834493183_1695422_n.jpg">
+	</div>
+	<button type="button" onclick="document.body.className = null;">Normal</button>
+	<button type="button" onclick="document.body.className = 'picasso';">Picasso</button>
+	<button type="button" onclick="document.body.className = 'crayon';">Crayon</button>
+	<button type="button" onclick="document.body.className = 'blonde';">Blonde</button>
+	<button type="button" onclick="document.body.className = 'blonde crayon picasso';">All</button>
+	<legend>Dessin original ©<a href="https://www.facebook.com/cml.illustration" target="_blank">Clotilde Martin-Lemerle</a></legend>
+	Il faut ouvrir la page dans Chrome !
+</body>
+<script type="text/javascript">
+	window.onload = function () {
+		if(window.chrome) {
+			document.body.className = null;
+		}
+	};
+</script>
 </html>
