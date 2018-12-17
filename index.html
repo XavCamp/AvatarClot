@@ -40,7 +40,8 @@
 			border-radius: 0;
 			overflow: hidden;
 		}
-		#container:hover {
+		#container:hover,
+		#container:active {
 			visibility: none;
 		}
 		#model {
@@ -50,7 +51,8 @@
   			position: absolute;
   			bottom: 0;
 		}
-		#container:hover #model {
+		#container:hover #model,
+		#container:active #model {
 			display: block;
 		}
 
@@ -388,6 +390,10 @@
 		button {
 			float: right;
 			clear: both;
+			padding: 10px;
+			border: 2px solid black;
+			margin: 5px;
+			font-size: large;
 		}
 
 
@@ -447,7 +453,7 @@
 			<div class="border face" id="rightEye"></div>
 			<div class="border face" id="mouth"></div>
 		</div>
-		<img id="model" src="https://avatars3.githubusercontent.com/u/2751516">
+		<img id="model" src="./original.jpeg">
 	</div>
 	<button type="button" onclick="document.body.className = null;">Normal</button>
 	<button type="button" onclick="document.body.className = 'picasso';">Picasso</button>
